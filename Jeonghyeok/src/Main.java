@@ -1,15 +1,45 @@
-//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
-// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
-public class Main {
-    public static void main(String[] args) {
-        //TIP 캐럿을 강조 표시된 텍스트에 놓고 <shortcut actionId="ShowIntentionActions"/>을(를) 누르면
-        // IntelliJ IDEA이(가) 수정을 제안하는 것을 확인할 수 있습니다.
-        System.out.printf("Hello and welcome!");
+import java.io.*;
+import java.util.StringTokenizer;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP <shortcut actionId="Debug"/>을(를) 눌러 코드 디버그를 시작하세요. 1개의 <icon src="AllIcons.Debugger.Db_set_breakpoint"/> 중단점을 설정해 드렸습니다
-            // 언제든 <shortcut actionId="ToggleLineBreakpoint"/>을(를) 눌러 중단점을 더 추가할 수 있습니다.
-            System.out.println("i = " + i);
+public class Main {
+    static int n;
+    static int[] a, b;
+    static boolean[] visited;
+    static int max = Integer.MIN_VALUE;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        n = Integer.parseInt(br.readLine());
+        a = new int[n];
+        b = new int[n];
+        visited = new boolean[n];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < n; i++) {
+            a[i] = Integer.parseInt(st.nextToken());
+        }
+
+        sol(0);
+        System.out.println(max);
+    }
+
+    public static void sol(int index) {
+        if(index == n) {
+            int sum = 0;
+            for(int i = 0; i < n - 1; i++) {
+                sum += Math.abs(b[i] - b[i+1]);
+            }
+            max = Math.max(max, sum);
+            return;
+        }
+        for(int i = 0; i < n; i++) {
+            if(!visited[i]) {
+                visited[i] = true;
+                b[index] = a[i];
+                sol(index + 1);
+                visited[i] = false;
+            }
         }
     }
 }
