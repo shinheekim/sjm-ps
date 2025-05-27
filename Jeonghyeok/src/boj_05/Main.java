@@ -1,5 +1,5 @@
 package boj_05;
-
+// 영화감독 숌
 import java.io.*;
 
 public class Main {
