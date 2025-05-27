@@ -14,7 +14,7 @@ public class Main {
         int count = 1;
 
         while (count != N) {
-            num++;
+            num++ ;
             if (String.valueOf(num).contains("666")) {
                 count++;
             }
