@@ -1,5 +1,5 @@
 package boj_04;
-
+// N과 M (1)
 import java.io.*;
 import java.util.*;
 

@@ -1,5 +1,5 @@
 package boj_05;
-
+// 영화감독 숌
 import java.io.*;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
         int count = 1;
 
         while (count != N) {
-            num++;
+            num++ ;
             if (String.valueOf(num).contains("666")) {
                 count++;
             }
