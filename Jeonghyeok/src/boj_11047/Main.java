@@ -20,7 +20,7 @@ public class Main {
         int count = 0;
 
         for(int i = n - 1 ; i >= 0; i--) {
-            if (coin[i] <= k) {
+                 if (coin[i] <= k) {
                 count += k / coin[i];
                 k %= coin[i];
             }
