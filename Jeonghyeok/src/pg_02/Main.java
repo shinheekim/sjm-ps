@@ -1,6 +1,6 @@
 package pg_02;
+//최소 직사각형
 import java.util.*;
-
 class Main {
     public int solution(int[][] sizes) {
         int maxW = 0;
