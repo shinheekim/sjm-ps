@@ -1,3 +1,5 @@
+// 동전 0 
+
 package boj_11047;
 
 import java.io.BufferedReader;
