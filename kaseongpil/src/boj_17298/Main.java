@@ -1,8 +1,6 @@
-package boj_2;
+package boj_17298;
 import java.io.*;
 import java.util.*;
-
-import static java.util.Arrays.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
