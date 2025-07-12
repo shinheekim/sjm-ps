@@ -6,25 +6,20 @@ import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 
 public class Main {
-    static PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-    private static int sortingCards() {
-        int res = 0;
-        while (priorityQueue.size() > 1) {
-            int firstCard = priorityQueue.poll();
-            int secondCard = priorityQueue.poll();
-            int sum = firstCard + secondCard;
-            res += sum;
-            priorityQueue.offer(sum);
-        }
-        return res;
-    }
+    static PriorityQueue<Integer> pq = new PriorityQueue<>();
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-
+        int ans = 0;
         for (int i = 0; i < N; i++)
-            priorityQueue.offer(Integer.parseInt(br.readLine()));
-
-        System.out.println(sortingCards());
+            pq.add(Integer.parseInt(br.readLine()));
+        while (pq.size() > 1) {
+            int firstCard = pq.poll();
+            int secondCard = pq.poll();
+            int sumCards = firstCard + secondCard;
+            ans += sumCards;
+            pq.offer(sumCards);
+        }
+        System.out.print(ans);
     }
 }

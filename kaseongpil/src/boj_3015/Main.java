@@ -1,4 +1,4 @@
-package boj_3;
+package boj_3015;
 import java.io.*;
 import java.util.*;
 
